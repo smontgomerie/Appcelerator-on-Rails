@@ -43,4 +43,5 @@ handlers to the view's controller.  When the controller responds to events, it c
 achieved MVC separation of concerns.
 
 Credits:
+
 Uses TiStore from http://github.com/jcfischer/TiStore
