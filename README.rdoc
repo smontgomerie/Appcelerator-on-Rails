@@ -1,0 +1,44 @@
+Appcelerator-on-Rails is an attempt to bring some of the paradigms of Ruby on Rails to the Appcelerator platform.
+It includes a Model-View-Controller paradigm, a database migration mechanism, and generators to facilitate rapid
+application development.
+
+== Getting Started ==
+
+Generate a new Appcelerator project using the Titanium SDK.  Copy the contents of the Appcelerator-on-Rails/Resources
+directory into your newly created project's Resources directory, and you're off.
+
+== Generators ==
+Generators require ruby and rubygems to be installed.
+
+To generate a new controller and view:
+
+    ruby ./scripts/generate.rb controller main
+
+To generate a new migration:
+
+    ruby ./scripts/generate.rb migration CreateUser
+
+To generate a new model:
+
+    ruby ./scripts/generate.rb model user
+
+NOTE: The model generator will implicitly generate a migration for that model.
+
+The next time your app starts up, it will check for a pending migration and run it.  Like Rails, it keeps track of
+previously run migrations.
+
+== App Organization ==
+
+The idea behind the MVC paradigm is keep logic code separate from view code. Especially when designing universal apps,
+this becomes increasingly important to your app's architecture.
+
+When creating a new window, you'll want to set the url parameter to your new window's controller.
+
+    Ti.UI.createWindow({
+        url: "controllers/main.js"
+    });
+
+This controller then instantiates a corresponding view.  Place all view-related code in the view, and attach event
+handlers to the view's controller.  When the controller responds to events, it can, in turn, affect the view.  Thus we've
+achieved MVC separation of concerns.
+
