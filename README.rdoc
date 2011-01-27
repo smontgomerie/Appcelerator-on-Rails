@@ -42,3 +42,5 @@ This controller then instantiates a corresponding view.  Place all view-related 
 handlers to the view's controller.  When the controller responds to events, it can, in turn, affect the view.  Thus we've
 achieved MVC separation of concerns.
 
+Credits:
+Uses TiStore from http://github.com/jcfischer/TiStore
