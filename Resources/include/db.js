@@ -1,5 +1,4 @@
-Ti.include('../include/underscore.js', '../include/active_db.js', '../include/models.js');
-
+Ti.include('../include/underscore.js', '../include/active_db.js');
 
 Titanium.API.info("Initializing DB");
 var db = Titanium.Database.open("ti_store");
@@ -64,5 +63,3 @@ function migrate(version, sql)
     db.execute(sql);
     db.execute("INSERT INTO schema_migrations VALUES (?)", version);
 }
-
-video_api = new Video(db);
