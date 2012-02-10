@@ -7,9 +7,11 @@ require "#{File.dirname(__FILE__)}/migration"
 class Model < AppcelGenerator
   def field_type(type)
     case type
-      when /String/i, /Boolean/i
+      when /String/i
+        return "TEXT"
+      when /Boolean/i
         return type.capitalize
-      when /integer/i
+      when /integer/i, /Number/i
         return "Number"
       else
         raise "Unknown type '#{type}'"

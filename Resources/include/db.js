@@ -8,7 +8,7 @@ var db = Titanium.Database.open("ti_store");
     function initialize_db(db) {
         Titanium.API.log("debug", "initialize_db");
 
-        db.execute('CREATE TABLE IF NOT EXISTS schema_migrations (version STRING NOT NULL PRIMARY KEY)');
+        db.execute('CREATE TABLE IF NOT EXISTS schema_migrations (version TEXT NOT NULL PRIMARY KEY)');
     }
 
     function seed_db(db) {
